@@ -42,25 +42,6 @@ $.onReady(function(){
 			$.parent(target,".visited-btns").style.display = 'none';
 		}
 	})
-	
-	// // 给单个li绑定mouseenter和mouseleave事件，但是如果将来对ul操作，会失去绑定事件
-
-	// function onMouseEnter(e) {
-	// 	btn = makeBtn();
-	// 	$.find('.visited-option',this)[0].appendChild(btn);
-	// }
-
-	// // mouseLeave callback, remove buttons
-	// function onMouseLeave(e) {
-	// 	option = $.find(".visited-option",this)[0];
-	// 	try {
-	// 		option.removeChild($.find(".visited-btns",option)[0]);
-	// 	}catch(e){}
-	// }
-	// $.find(".visited-inline").forEach(function(x){
-	// 	$.mouseEnterLeave(x,onMouseEnter,onMouseLeave);
-	// });
-
 
 // 	将mouseout和mouseover事件delegate给visited-section
 	function onMouseOver(e) {
@@ -100,6 +81,7 @@ $.onReady(function(){
 	var nav_arrow  = $.find("#nav_arrow");
 	var nav_ul = $.find('.nav-ul')[0];
 
+// 绑定鼠标进入导航条事件
 	$.on(nav_ul,'mouseover',function(e) {
 		e = e || window.event;
 		var target = e.srcElement || e.target;
@@ -136,9 +118,9 @@ $.onReady(function(){
 				})
 			}
 		}
-
 	});
 
+// 绑定鼠标移出导航条事件
 	$.on(nav_ul,'mouseout',function(e) {
 		e = e || window.event;
 		var target = e.srcElement || e.target;
@@ -159,11 +141,11 @@ $.onReady(function(){
 			{
 				var new_left = nav_arrow_list[new_class];
 				var old_left = nav_arrow.offsetLeft;
+
 				if(nav_arrow.animation && typeof nav_arrow.animation.stop === 'function')
 				{
 					nav_arrow.animation.stop();
 				}
-				
 				nav_arrow.animation = animation_left(nav_arrow,old_left,new_left,function(){
 					nav_arrow.className = nav_arrow.className.replace(/active-\d/,new_class);
 				})
@@ -188,6 +170,7 @@ $.onReady(function(){
 		}
 	})
 	
+	// 返回该元素在其父容器nodelist中的下标
 	function getIndex(pdom,child)
 	{
 		var list = pdom.childNodes;
@@ -206,6 +189,7 @@ $.onReady(function(){
 		return false;
 	}
 
+	// o表示要移动的dom对象，from/to是你要移动的起始/结束位置，Number类型； completecallback是动画结束后的callback	
 	function animation_left(o,from,to,completeCallback) {
 		if(typeof from !== 'number' || typeof to !== 'number') return false;
 		
@@ -229,7 +213,7 @@ $.onReady(function(){
 		return stop;
 	}
 
-// check wheather the browser support css3 transition
+// 检查用户浏览器是否支持css3的transition属性
 	function check_css3_transition()
 	{
 		var transition_list = ['-webkit-transition','-ms-transition','-moz-transition','-o-transition','transition'];
@@ -241,58 +225,60 @@ $.onReady(function(){
 		}
 		return false;
 	}
+
+
+	// cache positions
+	// IE6,7 and IE8 have diffent style
+	var nav_arrow_list = $.checkUserAgent().indexOf('IE 8.0') > -1 ? {
+		'active-1' : 2,
+		'active-2' : 64,
+		'active-3' : 126,
+		'active-5' : 213
+	}:
+	{
+		'active-1' : 6,
+		'active-2' : 69,
+		'active-3' : 131,
+		'active-5' : 218
+	}
+
+	// 创建一个btns element
+	function makeBtn()
+	{
+		var father = document.createElement('div');
+		father.className = "visited-option visited-btns";
+		// a 1
+		var a1 = document.createElement('a');
+		a1.href = "javascript:;";
+		a1.title = "留言";
+		a1.className = "visited-btn";
+		var inner1 = document.createElement('div');
+		inner1.className = "visited-message-container sprite-container";
+		var img1 = document.createElement('img');
+		img1.src = "img/sprite.png";
+		img1.className = "sprite sprite-visited-message";
+		img1.alt = "留言";
+		inner1.appendChild(img1);
+		a1.appendChild(inner1);
+
+		// a 2
+		var a2 = document.createElement('a');
+		a2.href = "javascript:;";
+		a2.title = "关闭";
+		a2.className = "visited-btn";
+		var inner2 = document.createElement('div');
+		inner2.className = "visited-close-container sprite-container";
+		var img2 = document.createElement('img');
+		img2.src = "img/sprite.png";
+		img2.className = "sprite sprite-visited-close";
+		img2.alt = "关闭";
+		inner2.appendChild(img2);
+		a2.appendChild(inner2);
+
+		// insert into father
+		father.appendChild(a1);
+		father.appendChild(a2);
+		return father;
+	}
+
 });
-
-// cache positions
-// IE6,7 and IE8 have diffent style
-var nav_arrow_list = $.checkUserAgent().indexOf('IE 8.0') > -1 ? {
-	'active-1' : 2,
-	'active-2' : 64,
-	'active-3' : 126,
-	'active-5' : 213
-}:
-{
-	'active-1' : 6,
-	'active-2' : 69,
-	'active-3' : 131,
-	'active-5' : 218
-}
-
-// make and return a new btn element
-function makeBtn()
-{
-	var father = document.createElement('div');
-	father.className = "visited-option visited-btns";
-	// a 1
-	var a1 = document.createElement('a');
-	a1.href = "javascript:;";
-	a1.title = "留言";
-	a1.className = "visited-btn";
-	var inner1 = document.createElement('div');
-	inner1.className = "visited-message-container sprite-container";
-	var img1 = document.createElement('img');
-	img1.src = "img/sprite.png";
-	img1.className = "sprite sprite-visited-message";
-	img1.alt = "留言";
-	inner1.appendChild(img1);
-	a1.appendChild(inner1);
-
-	// a 2
-	var a2 = document.createElement('a');
-	a2.href = "javascript:;";
-	a2.title = "关闭";
-	a2.className = "visited-btn";
-	var inner2 = document.createElement('div');
-	inner2.className = "visited-close-container sprite-container";
-	var img2 = document.createElement('img');
-	img2.src = "img/sprite.png";
-	img2.className = "sprite sprite-visited-close";
-	img2.alt = "关闭";
-	inner2.appendChild(img2);
-	a2.appendChild(inner2);
-
-	// insert into father
-	father.appendChild(a1);
-	father.appendChild(a2);
-	return father;
-}

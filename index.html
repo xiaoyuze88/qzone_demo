@@ -30,11 +30,11 @@
 <!-- header -->
 	<header id="main-header">
 		<div class="logo FL clearfix">
-			<a href="javascript:;" title="QQ空间">
+			<a href="javascript:;" title="QQ空间" class="DIB clearfix ">
 				<div class="logo-container logo-pic FL sprite-container">
 					<img src="img/sprite.png" class="sprite sprite-logo " alt="QQ空间">
 				</div>
-				<p class="logo-text FL">QQ空间</p>
+				<p class="DIB logo-text FL ">QQ空间</p>
 			</a>
 			<div class="sunshine-container sprite-container">
 				<img src="img/sprite.png" class="sprite sprite-sunshine sunshine-logo" alt="">
@@ -43,24 +43,24 @@
 		<div class="header-btn FL">
 			<ul class="header-btn-ul">
 				<li class="header-btn-li FL">
-					<a href="javascript:;" class="icon-container" title="消息">
+					<a href="javascript:;" class="DIB icon-container " title="消息">
 						<div class="message-container header-btn-icon sprite-container">
 							<img src="img/sprite.png"  class="sprite sprite-message" alt="消息">
 						</div>
 						<div class="icon1-text-container clearfix">
-							<span class="icon1-text">10</span>
+							<span class="DIB icon1-text">10</span>
 						</div>
 					</a>
 				</li>
 				<li class="header-btn-li FL">
-					<a href="javascript:;" class="icon-container" title="QQ校友">
+					<a href="javascript:;" class="DIB icon-container " title="QQ校友">
 						<div class="grass-container header-btn-icon sprite-container">
 							<img src="img/sprite.png" class="sprite sprite-grass " alt="QQ校友">
 						</div>
 					</a>
 				</li>
 				<li class="header-btn-li FL">
-					<a href="javascript:;" class="icon-container" title="微博">
+					<a href="javascript:;" class="DIB icon-container " title="微博">
 						<div class="searche1-container header-btn-icon sprite-container">
 							<img src="img/sprite.png" class="sprite sprite-search1" alt="微博">
 						</div>
@@ -77,7 +77,7 @@
 				</a>
 			</div>
 			<div class="search-input-container">
-				<input type="text" id="search-bar" placeholder="输入话题/QQ号/昵称..." title="输入话题/QQ号/昵称...">
+				<input type="text" id="search-bar" class="DIB" placeholder="输入话题/QQ号/昵称..." title="输入话题/QQ号/昵称...">
 			</div>
 		</div>
 		<nav class="header-nav FR">
@@ -85,7 +85,7 @@
 				<li class="nav-li FL active"><a href="javascript:;" class="nav-li-a" title="首页">首页</a></li>
 				<li class="nav-li FL "><a href="javascript:;" class="nav-li-a" title="我的主页">我的主页</a></li>
 				<li class="nav-li FL "><a href="javascript:;" class="nav-li-a" title="设置">设置</a></li>
-				<li class="divider FL "></li>
+				<li class="DIB divider FL"></li>
 				<li class="nav-li FL last-nav-li"><a href="javascript:;" class="nav-li-a" title="切换普通版">切换普通版</a></li>
 			</ul>
 			<div class="nav-arrow-container active-1" id="nav_arrow">
@@ -98,10 +98,14 @@
 	</header>
 
 <!-- main body -->
-	<div id="main">
-		<!-- sider -->
-		<div class="sider FL">
-			<div class="sider-bg"></div>
+	<div id="main" class="clearfix">
+		<!-- left sider menu -->
+		<menu class="sider FL">
+			<div class="sider-bg">
+				<div class="sider-bg-border-outter"></div>
+				<div class="sider-bg-inner"></div>
+				<div class="sider-bg-border-inner"></div>
+			</div>
 			<div class="sider-inner">
 				<!-- sider header -->
 				<div class="sider-legend clearfix">
@@ -109,329 +113,337 @@
 					<div class="sider-legend-text FL">
 						<a href="javascript:;" class="user-name">CLO<div class="white-down-arrow-container sprite-container"><img src="img/sprite.png" class="sprite-white-down-arrow" alt="更多"></div>
 						</a>
-						<a href="javascript:;" class="options" title="编辑个人档案">编辑个人档案</a>
+						<a href="javascript:;" class="DB options" title="编辑个人档案">编辑个人档案</a>
 					</div>
 				</div>
 				<div class="sider-legend-divider"></div>
+				<div class="sider-legend-divider-2"></div>
 
 				<!-- sider list1 -->
 				<ul class="sider-list1">
 					<li class="sider-list1-li ">
-						<a href="javascript:;" class="sider-list1-li-a color-dark" title="好友动态">好友动态</a>
+						<a href="javascript:;" class="DB sider-list1-li-a color-dark" title="好友动态">好友动态</a>
 					</li>
 					<li class="sider-list1-li active">
-						<a href="javascript:;" class="sider-list1-li-a color-dark clearfix" title="我的空间动态"><span class="space-news-text FL">我的空间动态</span><span class="space-news-container FL sprite-container"><span id="space_news_num">13</span>
+						<a href="javascript:;" class="DB sider-list1-li-a color-dark clearfix" title="我的空间动态"><span class="space-news-text FL">我的空间动态</span><span class="space-news-container FL sprite-container"><span id="space_news_num" class="DIB">13</span>
 							<img src="img/sprite.png" alt="我的空间动态" class="sprite-space-news"></span>
 						</a>
 					</li>
 					<li class="sider-list1-li ">
-						<a href="javascript:;" class="sider-list1-li-a color-dark" title="QQ群动态">QQ群动态</a>
+						<a href="javascript:;" class="DB sider-list1-li-a color-dark" title="QQ群动态">QQ群动态</a>
 					</li>
 					<li class="sider-list1-li ">
-						<a href="javascript:;" class="sider-list1-li-a color-dark" title="我喜欢">我喜欢</a>
+						<a href="javascript:;" class="DB sider-list1-li-a color-dark" title="我喜欢">我喜欢</a>
 					</li>
 				</ul>
 
 				<!-- sider links -->
+				<div class="sider-divider"></div>
 				<ul class="sider-links clearfix">
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="日志">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="日志">
 							<div class="blog-container sprite-container FL">
 								<img src="img/sprite.png" class="sprite sprite-blog" alt="日志">
 							</div>日志</a>
 					</li>
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="相册">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="相册">
 							<div class="album-container sprite-container FL">
 								<img src="img/sprite.png" class="sprite sprite-album" alt="相册">
 							</div>相册</a>
 					</li>
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="说说">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="说说">
 							<div class="say-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-say" alt="说说"></div>说说</a>
 					</li>
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="分享">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="分享">
 							<div class="share-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-share" alt="分享"></div>分享</a>
 					</li>
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="投票">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="投票">
 							<div class="vote-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-vote" alt="投票"></div>投票</a>
 					</li>
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="QQ农场">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="QQ农场">
 							<div class="farm-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-farm" alt="QQ农场"></div>QQ农场</a>
 					</li>
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="记事本">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="记事本">
 							<div class="note-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-note" alt="记事本"></div>记事本</a>
 					</li>
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="微博">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="微博">
 							<div class="twitter-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-twitter" alt="微博"></div>微博
 						</a>
 					</li>
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="QQ音乐">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="QQ音乐">
 							<div class="music-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-music FL" alt="QQ音乐"></div>QQ音乐</a>
 					</li>
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="礼物">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="礼物">
 							<div class="gift-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-gift FL" alt="礼物"></div>礼物</a>
 					</li>
 					<li class="sider-links-more clearfix">
-						<a href="javascript:;" class="sider-links-more-a color-dark FL" title="更多"><span class="sider-more-text  FL">更多</span><div class="grey-down-arrow-container sprite-container FL"><img src="img/sprite.png" class="sprite-grey-down-arrow" alt="更多"></div>
+						<a href="javascript:;" class="sider-links-more-a color-dark FL" title="更多"><span class="DIB sider-more-text  FL">更多</span><div class="grey-down-arrow-container sprite-container FL"><img src="img/sprite.png" class="sprite-grey-down-arrow" alt="更多"></div>
 						</a>
 						<a href="javascript:;" class="sider-links-more-manage color-link FR" title="管理">管理</a>
 					</li>
 				</ul>
 
 				<!-- sider links bottom -->
+				<div class="sider-divider"></div>
 				<ul class="sider-links sider-links-bottom">
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="认证空间">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="认证空间">
 							<div class="zone-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-zone" alt="认证空间"></div>认证空间</a>
 					</li>
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="QQ校友">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="QQ校友">
 							<div class="grass-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-grass" alt="QQ校友"></div>QQ校友</a>
 					</li>
 					<li class="sider-links-li">
-						<a href="javascript:;" class="sider-links-li-a color-dark" title="城市达人">
+						<a href="javascript:;" class="DB sider-links-li-a color-dark" title="城市达人">
 							<div class="outstanding-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-outstanding" alt="城市达人"></div>城市达人</a>
 					</li>
 				</ul>
 			</div>
-		</div>
+		</menu>
 
 		<!-- content -->
-		<div class="content" id="content">
+		<div id="content">
+			<div class="content-bg"></div>
+			<div class="content clearfix">
+				<!-- content sider -->
+				<div class="content-sider FR" id="content-sider">
 
-			<!-- content sider -->
-			<div class="content-sider FR" id="content-sider">
+					<!-- content sider visited section -->
+					<section class="content-sider-visited clearfix" id="visited-section">
+						<div class="visited-labels active-left" id="visited-label-container">
+							<span class="label left-label" id="left-label">谁看过我</span>
+							<span class="label right-label" id="right-label">谁看过我</span>
+						</div>
+						<div id="visited-content" class="visited-content active">
+							<ul class="visited-list clearfix">
+								<li class="visited-inline FL">
+									<a href="javascript:;" title="Lynn" class="FL"><img src="demo-img/demo-img1.jpg" class="visited-pic FL" alt="Lynn"></a>
+									<div class="visited-info FL">
+										<a href="javascript:;" class="visited-title color-link" title="Lynn">Lynn</a>
+										<span class="DIB visited-option color-muted">今天<time class="DIB visited-time">15:30</time></span>
+									</div>
+								</li>
+								<li class="visited-inline FL">
+									<a href="javascript:;" title="布林" class="FL"><img src="demo-img/demo-img2.jpg" alt="布林" class="visited-pic FL"></a>
+									<div class="visited-info FL">
+										<a href="javascript:;" class="visited-title color-link" title="布林">布林</a>
+										<span class="DIB visited-option color-muted">今天<time class="DIB visited-time">15:30</time></span>
+									</div>
+								</li>
+								<li class="visited-inline FL">
+									<a href="javascript:;" title="梨花开那夜梨花开那夜梨花开那啊啊啊我是长名字超级长啊啊啊" class="FL"><img src="demo-img/demo-img3.jpg" alt="梨花开那夜梨花开那夜梨花开那啊啊啊我是长名字超级长啊啊啊" class="visited-pic FL"></a>
+									<div class="visited-info FL">
+										<a href="javascript:;" class="visited-title color-link" title="梨花开那夜" class="FL">梨花开那夜</a>
+										<span class="DIB visited-option color-muted">今天<time class="DIB visited-time">15:30</time></span>
+									</div>
+								</li>
+								<li class="visited-inline FL">
+									<a href="javascript:;" title="梨花开那夜" class="FL"><img src="demo-img/demo-img4.jpg" alt="梨花开那夜" class="visited-pic FL"></a>
+									<div class="visited-info FL">
+										<a href="javascript:;" class="visited-title color-link" title="梨花开那夜">梨花开那夜</a>
+										<span class="DIB visited-option color-muted">今天<time class="DIB visited-time">15:30</time></span>
+									</div>
+								</li>
+								<li class="visited-inline FL">
+									<a href="javascript:;" title="微笑女王" class="FL"><img src="demo-img/demo-img5.jpg" class="visited-pic FL" alt="微笑女王"></a>
+									<div class="visited-info FL">
+										<a href="javascript:;" class="visited-title color-link" title="微笑女王">微笑女王</a>
+										<span class="DIB visited-option color-muted">今天<time class="DIB visited-time">15:30</time></span>
+									</div>
+								</li>
+								<li class="visited-inline FL">
+									<a href="javascript:;" title="布林" class="FL"><img src="demo-img/demo-img6.jpg"  class="visited-pic FL" alt="布林"></a>
+									<div class="visited-info FL">
+										<a href="javascript:;" class="visited-title color-link" title="布林">布林</a>
+										<span class="DIB visited-option color-muted">今天<time class="DIB DIB visited-time">15:30</time></span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</section>
 
-				<!-- content sider visited section -->
-				<section class="content-sider-visited clearfix" id="visited-section">
-					<div class="visited-labels active-left" id="visited-label-container">
-						<span class="label left-label" id="left-label">谁看过我</span>
-						<span class="label right-label" id="right-label">谁看过我</span>
-					</div>
-					<div id="visited-content" class="visited-content active">
-						<ul class="visited-list clearfix">
-							<li class="visited-inline FL">
-								<a href="javascript:;" title="Lynn" class="FL"><img src="demo-img/demo-img1.jpg" class="visited-pic FL" alt="Lynn"></a>
-								<div class="visited-info FL">
-									<a href="javascript:;" class="visited-title color-link" title="Lynn">Lynn</a>
-									<span class="visited-option color-muted">今天<time class="visited-time">15:30</time></span>
-								</div>
+					<!-- content sider maybe known section-->
+					<section class="content-sider-section">
+						<h3 class="sider-section-legend">可能认识的人</h3>
+						<div class="sider-known clearfix">
+							<ul class="sider-known-list clearfix">
+								<li class="sider-known-inline clearfix">
+									<a href="javascript:;" title="ivve"><img src="demo-img/demo-img21.jpg" alt="ivve" class="known-pic FL"></a>
+									<div class="known-info FL">
+										<a href="javascript:;" class="DIB known-title color-link" title="ivve">
+											<span class="known-name FL">ivve</span>
+										</a>
+										<p class="known-detail color-dark">10个共同好友</p>
+										<a href="javascript:;" class="known-options color-link" title="加为好友">
+											<div class="add-friend-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-add-friend" alt="加为好友"></div><span class="option-text FL">加朋友</span>
+										</a>
+									</div>
+								</li>
+								<li class="sider-known-inline clearfix">
+									<a href="javascript:;" title="ivve"><img src="demo-img/demo-img22.jpg" alt="ivve" class="known-pic FL"></a>
+									<div class="known-info FL">
+										<a href="javascript:;" class="DIB known-title color-link" title="ivve">
+											<span class="known-name FL">ivve</span><i class="sprite sprite-famous FL"></i>
+										</a>
+										<p class="known-detail color-dark"><span class="known-like-num">2344</span>人喜欢</p>
+										<a href="javascript:;" class="known-options color-link" title="喜欢">
+											<div class="like-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-like" alt="喜欢"></div><span class="option-text FL">喜欢</span>
+										</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- birthday lately section-->
+					<section class="content-sider-section">
+						<h3 class="sider-section-legend">最近过生日</h3>
+						<div class="sider-known clearfix">
+							<ul class="sider-known-list clearfix">
+								<li class="sider-known-inline clearfix">
+									<a href="javascript:;" title="雪花"><img src="demo-img/demo-img31.jpg" alt="雪花" class="known-pic FL" ></a>
+									<div class="known-info  FL">
+										<a href="javascript:;" class="DIB known-title color-link" title="雪花">
+											<span class="known-name">雪花</span>
+										</a>
+										<p class="known-detail color-dark">9月13号三天后</p>
+										<a href="javascript:;" class="known-options color-link" title="送礼物">
+											<div class="send-gift-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-send-gift" alt="送礼物"></div><span class="option-text FL">送礼物</span>
+										</a>
+									</div>
+								</li>
+								<li class="sider-known-inline clearfix">
+									<a href="javascript:;" title="邹亮"><img src="demo-img/demo-img32.jpg" alt="邹亮" class="known-pic FL"></a>
+									<div class="known-info  FL">
+										<a href="javascript:;" class="DIB known-title color-link" title="邹亮">
+											<span class="known-name">邹亮</span>
+										</a>
+										<p class="known-detail color-dark">9月13号三天后</p>
+										<a href="javascript:;" class="known-options color-link" title="送礼物">
+											<div class="send-gift-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-send-gift" alt="送礼物"></div><span class="option-text FL">送礼物</span>
+										</a>
+									</div>
+								</li>
+								<li class="sider-known-inline clearfix">
+									<a href="javascript:;" title="ivve"><img src="demo-img/demo-img22.jpg" alt="ivve" class="known-pic FL"></a>
+									<div class="known-info  FL">
+										<a href="javascript:;" class="DIB known-title color-link" title="ivve">
+											<span class="known-name">ivve</span>
+										</a>
+										<p class="known-detail color-dark">9月13号三天后</p>
+										<a href="javascript:;" class="known-options color-link" title="送礼物">
+											<div class="send-gift-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-send-gift" alt="送礼物"></div><span class="option-text FL">送礼物</span>
+										</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- hot topics -->
+					<section class=" content-sider-section">
+						<h3 class="sider-section-legend">热门话题</h3>
+						<ul class="hot-topic-list clearfix">
+							<li class="hot-topic-inline">
+								<a href="javascript:;" title="中超落幕" class="DIB topic-name color-dark clearfix">
+									<span class="">中超落幕</span>
+									<div class="rise-container sprite-container"><img src="img/sprite.png" class="sprite sprite-rise" alt="中超落幕"></div>
+									<span class="topic-num color-muted">(13007)</span>
+								</a>
 							</li>
-							<li class="visited-inline FL">
-								<a href="javascript:;" title="布林" class="FL"><img src="demo-img/demo-img2.jpg" alt="布林" class="visited-pic FL"></a>
-								<div class="visited-info FL">
-									<a href="javascript:;" class="visited-title color-link" title="布林">布林</a>
-									<span class="visited-option color-muted">今天<time class="visited-time">15:30</time></span>
-								</div>
+							<li class="hot-topic-inline">
+								<a href="javascript:;" title="女排胜日本" class="DIB topic-name color-dark clearfix">
+									<span class="">女排胜日本</span>
+									<div class="rise-container sprite-container"><img src="img/sprite.png" class="sprite sprite-rise" alt="女排胜日本"></div>
+									<span class="topic-num color-muted">(15639)</span>
+								</a>
 							</li>
-							<li class="visited-inline FL">
-								<a href="javascript:;" title="梨花开那夜梨花开那夜梨花开那啊啊啊我是长名字超级长啊啊啊" class="FL"><img src="demo-img/demo-img3.jpg" alt="梨花开那夜梨花开那夜梨花开那啊啊啊我是长名字超级长啊啊啊" class="visited-pic FL"></a>
-								<div class="visited-info FL">
-									<a href="javascript:;" class="visited-title color-link" title="梨花开那夜梨花开那夜梨花开那啊啊啊我是长名字超级长啊啊啊" class="FL">梨花开那夜梨花开那夜梨花开那啊啊啊我是长名字超级长啊啊啊</a>
-									<span class="visited-option color-muted">今天<time class="visited-time">15:30</time></span>
-								</div>
+							<li class="hot-topic-inline">
+								<a href="javascript:;" title="光棍节宣言" class="DIB topic-name color-dark clearfix">
+									<span class="">光棍节宣言</span>
+									<div class="rise-container sprite-container"><img src="img/sprite.png" class="sprite sprite-rise" alt="光棍节宣言"></div>
+									<span class="topic-num color-muted ">(47443)</span>
+								</a>
 							</li>
-							<li class="visited-inline FL">
-								<a href="javascript:;" title="梨花开那夜" class="FL"><img src="demo-img/demo-img4.jpg" alt="梨花开那夜" class="visited-pic FL"></a>
-								<div class="visited-info FL">
-									<a href="javascript:;" class="visited-title color-link" title="梨花开那夜">梨花开那夜</a>
-									<span class="visited-option color-muted">今天<time class="visited-time">15:30</time></span>
-								</div>
+							<li class="hot-topic-inline">
+								<a href="javascript:;" title="MSN搬家" class="DIB topic-name color-dark clearfix">
+									<span class="">MSN搬家</span>
+									<div class="rise-container sprite-container"><img src="img/sprite.png" class="sprite sprite-rise" alt="MSN搬家"></div>
+									<span class="topic-num color-muted ">(73024)</span>
+								</a>
 							</li>
-							<li class="visited-inline FL">
-								<a href="javascript:;" title="微笑女王" class="FL"><img src="demo-img/demo-img5.jpg" class="visited-pic FL" alt="微笑女王"></a>
-								<div class="visited-info FL">
-									<a href="javascript:;" class="visited-title color-link" title="微笑女王">微笑女王</a>
-									<span class="visited-option color-muted">今天<time class="visited-time">15:30</time></span>
-								</div>
-							</li>
-							<li class="visited-inline FL">
-								<a href="javascript:;" title="布林" class="FL"><img src="demo-img/demo-img6.jpg"  class="visited-pic FL" alt="布林"></a>
-								<div class="visited-info FL">
-									<a href="javascript:;" class="visited-title color-link" title="布林">布林</a>
-									<span class="visited-option color-muted">今天<time class="visited-time">15:30</time></span>
-								</div>
+							<li class="hot-topic-inline">
+								<a href="javascript:;" title="立冬" class="DIB topic-name color-dark clearfix">
+									<span class="">立冬</span>
+									<div class="rise-container sprite-container"><img src="img/sprite.png" class="sprite sprite-rise" alt="立冬"></div>
+									<span class="topic-num color-muted ">(167259)</span>
+								</a>
 							</li>
 						</ul>
-					</div>
-				</section>
+					</section>
+				</div>
 
-				<!-- content sider maybe known section-->
-				<section class="content-sider-section">
-					<h3 class="sider-section-legend">可能认识的人</h3>
-					<div class="sider-known clearfix">
-						<ul class="sider-known-list clearfix">
-							<li class="sider-known-inline clearfix">
-								<a href="javascript:;" title="ivve"><img src="demo-img/demo-img21.jpg" alt="ivve" class="known-pic FL"></a>
-								<div class="known-info FL">
-									<a href="javascript:;" class="known-title color-link" title="ivve">
-										<span class="known-name FL">ivve</span>
-									</a>
-									<p class="known-detail color-dark">10个共同好友</p>
-									<a href="javascript:;" class="known-options color-link" title="加为好友">
-										<div class="add-friend-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-add-friend" alt="加为好友"></div><span class="option-text FL">加朋友</span>
-									</a>
-								</div>
-							</li>
-							<li class="sider-known-inline clearfix">
-								<a href="javascript:;" title="ivve"><img src="demo-img/demo-img22.jpg" alt="ivve" class="known-pic FL"></a>
-								<div class="known-info FL">
-									<a href="javascript:;" class="known-title color-link" title="ivve">
-										<span class="known-name FL">ivve</span><i class="sprite sprite-famous FL"></i>
-									</a>
-									<p class="known-detail color-dark"><span class="known-like-num">2344</span>人喜欢</p>
-									<a href="javascript:;" class="known-options color-link" title="喜欢">
-										<div class="like-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-like" alt="喜欢"></div><span class="option-text FL">喜欢</span>
-									</a>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-
-				<!-- birthday lately section-->
-				<section class="content-sider-section">
-					<h3 class="sider-section-legend">最近过生日</h3>
-					<div class="sider-known clearfix">
-						<ul class="sider-known-list clearfix">
-							<li class="sider-known-inline clearfix">
-								<a href="javascript:;" title="雪花"><img src="demo-img/demo-img31.jpg" alt="雪花" class="known-pic FL" ></a>
-								<div class="known-info  FL">
-									<a href="javascript:;" class="known-title color-link" title="雪花">
-										<span class="known-name">雪花</span>
-									</a>
-									<p class="known-detail color-dark">9月13号三天后</p>
-									<a href="javascript:;" class="known-options color-link" title="送礼物">
-										<div class="send-gift-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-send-gift" alt="送礼物"></div><span class="option-text FL">送礼物</span>
-									</a>
-								</div>
-							</li>
-							<li class="sider-known-inline clearfix">
-								<a href="javascript:;" title="邹亮"><img src="demo-img/demo-img32.jpg" alt="邹亮" class="known-pic FL"></a>
-								<div class="known-info  FL">
-									<a href="javascript:;" class="known-title color-link" title="邹亮">
-										<span class="known-name">邹亮</span>
-									</a>
-									<p class="known-detail color-dark">9月13号三天后</p>
-									<a href="javascript:;" class="known-options color-link" title="送礼物">
-										<div class="send-gift-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-send-gift" alt="送礼物"></div><span class="option-text FL">送礼物</span>
-									</a>
-								</div>
-							</li>
-							<li class="sider-known-inline clearfix">
-								<a href="javascript:;" title="ivve"><img src="demo-img/demo-img22.jpg" alt="ivve" class="known-pic FL"></a>
-								<div class="known-info  FL">
-									<a href="javascript:;" class="known-title color-link" title="ivve">
-										<span class="known-name">ivve</span>
-									</a>
-									<p class="known-detail color-dark">9月13号三天后</p>
-									<a href="javascript:;" class="known-options color-link" title="送礼物">
-										<div class="send-gift-container sprite-container FL"><img src="img/sprite.png" class="sprite sprite-send-gift" alt="送礼物"></div><span class="option-text FL">送礼物</span>
-									</a>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-
-				<!-- hot topics -->
-				<section class=" content-sider-section">
-					<h3 class="sider-section-legend">热门话题</h3>
-					<ul class="hot-topic-list clearfix">
-						<li class="hot-topic-inline">
-							<a href="javascript:;" title="中超落幕" class="topic-name color-dark clearfix">
-								<span class="">中超落幕</span>
-								<div class="rise-container sprite-container"><img src="img/sprite.png" class="sprite sprite-rise" alt="中超落幕"></div>
-								<span class="topic-num color-muted">(13007)</span>
-							</a>
-						</li>
-						<li class="hot-topic-inline">
-							<a href="javascript:;" title="女排胜日本" class="topic-name color-dark clearfix">
-								<span class="">女排胜日本</span>
-								<div class="rise-container sprite-container"><img src="img/sprite.png" class="sprite sprite-rise" alt="女排胜日本"></div>
-								<span class="topic-num color-muted">(15639)</span>
-							</a>
-						</li>
-						<li class="hot-topic-inline">
-							<a href="javascript:;" title="光棍节宣言" class="topic-name color-dark clearfix">
-								<span class="">光棍节宣言</span>
-								<div class="rise-container sprite-container"><img src="img/sprite.png" class="sprite sprite-rise" alt="光棍节宣言"></div>
-								<span class="topic-num color-muted ">(47443)</span>
-							</a>
-						</li>
-						<li class="hot-topic-inline">
-							<a href="javascript:;" title="MSN搬家" class="topic-name color-dark clearfix">
-								<span class="">MSN搬家</span>
-								<div class="rise-container sprite-container"><img src="img/sprite.png" class="sprite sprite-rise" alt="MSN搬家"></div>
-								<span class="topic-num color-muted ">(73024)</span>
-							</a>
-						</li>
-						<li class="hot-topic-inline">
-							<a href="javascript:;" title="立冬" class="topic-name color-dark clearfix">
-								<span class="">立冬</span>
-								<div class="rise-container sprite-container"><img src="img/sprite.png" class="sprite sprite-rise" alt="立冬"></div>
-								<span class="topic-num color-muted ">(167259)</span>
-							</a>
-						</li>
-					</ul>
-				</section>
-			</div>
-
-			<!-- main content -->
-			<div class="content-main" id="content-main">
-				<div class="content-inner">
-					<!-- content header -->
-					<div class="content-header">
-						<div class="attachments">
-							<!-- <div class="attachments-inner clearfix"> -->
+				<!-- main content -->
+				<div class="content-main" id="content-main">
+					<div class="content-inner">
+						<!-- content header -->
+						<div class="content-header">
+							<div class="attachments">
+								<!-- NOTICE:此处a标签需首尾连接 -->
 								<a href="javascript:void(1);" class="attachment-item" title="分享照片">
 									<div class="photo-container sprite-container"><img src="img/sprite.png" class="sprite sprite-photo" alt="分享照片"></div>
 								</a><a href="javascript:void(2);" class="attachment-item" title="分享视频">
 									<div class="video-container sprite-container"><img src="img/sprite.png" class="sprite sprite-video" alt="分享视频"></div></a><a href="javascript:void(3);" class="attachment-item" title="分享链接">
 									<div class="link-container sprite-container"><img src="img/sprite.png" class="sprite sprite-link" alt="分享链接"></div></a>
-							<!-- </div> -->
+							</div>
+							<div class="input-wrapper">
+								<input type="text" class="DIB header-input" title="开心的,难过的,别忘了记录下来..." placeholder="开心的,难过的,别忘了记录下来...">
+							</div>
 						</div>
-						<div class="input-wrapper">
-							<input type="text" class="header-input" title="开心的,难过的,别忘了记录下来..." placeholder="开心的,难过的,别忘了记录下来...">
-						</div>
-					</div>
 
-					<!-- content body -->
-					<div class="content-body" id="content-body">
-						<p class="content-body-title"></p>
+						<!-- content body -->
+						<div class="content-body" id="content-body">
+							<p class="content-body-title">
+								<!-- CONTENT TITLE HERE -->
+							</p>
+							<article>
+								<!-- add articles here -->
+							</article>
+						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 
 	<!-- footer -->
 	<footer id="main-footer" class="TC">
-		<div class="footer-wrapper">
+		<div class="DIB footer-wrapper">
 			<div class="main-footer-inner">
-				<ul class="footer-links clearfix">
-					<li class="footer-links-li FL"><a href="javascript:;" class="footer-links-a" title="iPad">iPad</a></li>
+				<ul class="DIB footer-links clearfix">
+					<li class="footer-links-li FL"><a href="javascript:;" class="DIB footer-links-a" title="iPad">iPad</a></li>
 					<li class="divider FL"></li>
-					<li class="footer-links-li FL"><a href="javascript:;" class="footer-links-a" title="空间首页">空间首页</a></li>
+					<li class="footer-links-li FL"><a href="javascript:;" class="DIB footer-links-a" title="空间首页">空间首页</a></li>
 					<li class="divider FL"></li>
-					<li class="footer-links-li FL"><a href="javascript:;" class="footer-links-a" title="皇冠贵族">皇冠贵族</a></li>
+					<li class="footer-links-li FL"><a href="javascript:;" class="DIB footer-links-a" title="皇冠贵族">皇冠贵族</a></li>
 					<li class="divider FL"></li>
-					<li class="footer-links-li FL"><a href="javascript:;" class="footer-links-a" title="官方Qzone">官方Qzone</a></li>
+					<li class="footer-links-li FL"><a href="javascript:;" class="DIB footer-links-a" title="官方Qzone">官方Qzone</a></li>
 					<li class="divider FL"></li>
-					<li class="footer-links-li FL"><a href="javascript:;" class="footer-links-a" title="腾讯博客">腾讯博客</a></li>
+					<li class="footer-links-li FL"><a href="javascript:;" class="DIB footer-links-a" title="腾讯博客">腾讯博客</a></li>
 					<li class="divider FL"></li>
-					<li class="footer-links-li FL"><a href="javascript:;" class="footer-links-a" title="日志归档">日志归档</a></li>
+					<li class="footer-links-li FL"><a href="javascript:;" class="DIB footer-links-a" title="日志归档">日志归档</a></li>
 					<li class="divider FL"></li>
-					<li class="footer-links-li FL"><a href="javascript:;" class="footer-links-a" title="腾讯客服">腾讯客服</a></li>
+					<li class="footer-links-li FL"><a href="javascript:;" class="DIB footer-links-a" title="腾讯客服">腾讯客服</a></li>
 				</ul>
 				<p class="copyright">Copyright © 1998 - 2010 Tencent. All Rights Reserved.</p>
 				<p class="copyright">腾讯公司 版权所有</p>
@@ -439,16 +451,10 @@
 		</div>
 	</footer>
 </div>
-
 <script src="js/tencent.js"></script>
 <script src="js/index.js"></script>
-
 <!--[if lte IE 8]>
    <script src="js/fix-placeholder.js"></script>
 <![endif]-->
-   
-
-
-
 </body>
 </html>

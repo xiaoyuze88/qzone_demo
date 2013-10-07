@@ -1,13 +1,13 @@
 (function(window){
-
 var reg = /^(?:#([\w-]+))|(?:\.([\w-]+))|([\s\S]+)/;
-
 
 var tencent = {
 	callback_list : [],
+
+// all code inside the callback function will be called right after the dom is ready
 	onReady : function (callback) {
 		var that = this;
-	// if dom is already complete, call it directly
+		// if dom is already complete, call it directly
 		if(document.readyState == 'complete')
 		{
 			callback();
@@ -30,7 +30,8 @@ var tencent = {
 			}
 		}
 	},	
-// all code inside the callback will be called right after the dom is ready
+
+// add an event listener to an element,o can be an node array
 	on : function (o,event,handler) {
 		if(this.check(o) === 'array' && o.length > 0)
 		{
@@ -48,6 +49,7 @@ var tencent = {
 				}
 				else
 				{
+			// problem: can't remove the listener.
 					o.attachEvent('on' + event, function(e) {
 			// set 'this' to the current dom object, rather than window;
 						e = e || window.event;
@@ -68,7 +70,8 @@ var tencent = {
 		if(e.stopPropagation) e.stopPropagation();
 		else e.cancelBubble = true;
 	},
-	// can't input array
+	// o can just be a dom element, don't support delegate. If you want to delegate a mouseenter or mouseleave event,
+	// place delegate mouseout or mouseover event directly
 	mouseEnterLeave : function (o,enterCallback,leaveCallback) {
 		var that = this;
 		this.on(o,'mouseover',function(e)
@@ -87,6 +90,7 @@ var tencent = {
 		});
 	},
 //selector : accept String , like #id,.className,tagName and HTMLNode, return DomElement array
+// !!only accept one selector a time!!
 	find : function (selector,node) {
 
 		if(typeof selector !== 'string') return null;
@@ -139,12 +143,7 @@ var tencent = {
 			o.parentNode.removeChild(o)
 		}catch(e) {}
 	},
-	each : function (array,fn) {
-		if(check(array) !== 'array') return false;
-		
-		if(typeof fn === 'function')
-			array.forEach(fn);
-	},
+	// check the object's type,if is an array,return 'array';
 	check : function(o) {
 		try {
 			return Object.prototype.toString.call(o).replace(/^(\[\w+\s)|(\])$/g,'').toLowerCase();
@@ -152,7 +151,7 @@ var tencent = {
 			return false;
 		}
 	},
-	// iterator the node
+	// iterator the node, and call the func for each nodes.
 	iterator : function (node,func) {
 		func(node);
 		node = node.firstChild;
@@ -162,7 +161,9 @@ var tencent = {
 			node = node.nextSibling;
 		}
 	},
-	// find the node's parentNode , selector is like ".className","#id","tagname".
+	// find the node's parentNode , selector is like ".className","#id","tagname",accept one selector one time
+	// for example: if you want to find #wrapper's parent body:   
+	// parent($.find("#wrapper"),'body')
 	parent : function(node,selector) {
 		var parent = node.parentNode;
 		var match = reg.exec(selector);
@@ -189,7 +190,8 @@ var tencent = {
 
 		var parent = e.relatedTarget || e.toElement || null;
 		try {
-			while ( parent && parent !== that ) {
+			while (parent && parent !== that) 
+			{
 				parent = parent.parentNode;
 			}
 			return (parent !== that);
@@ -199,7 +201,8 @@ var tencent = {
 		e = e || window.event;
 		var parent = e.relatedTarget || e.fromElement || null;
 		try {
-			while ( parent && parent !== that ) {
+			while (parent && parent !== that) 
+			{
 				parent = parent.parentNode;
 			}
 			return (parent !== that);
@@ -207,7 +210,8 @@ var tencent = {
 	},
 	// total: how long should the animation take; frames: how many frames should the animation show;
 	// callback: every frame the callback can get an param p, from 0 to 1 ,means the rate of progress,
-	// the animate function return a function stop: which can stop the animation
+	// the animate function return an object, which has one method 'stop', that you can use it to stop the animation.
+	// completeCallback will be called when the animation is finish.
 	animate : function (total,frames,callback,completeCallback) {
 		var timer,
 			gap = total/frames,
@@ -224,18 +228,21 @@ var tencent = {
 			else
 			{
 				callback(p);
-				current+=gap;
+				current += gap;
 				timer = setTimeout(nextFrame,gap);
 			}
 		}
 		nextFrame();
-		return { stop: function()
-		{
-			try {
-				clearTimeout(timer);
-			} catch(e) {}
-		}};
+		// return an object that has a 'stop' method.
+		return {
+			stop : function() {
+				try {
+					clearTimeout(timer);
+				} catch(e) {}
+			}
+		};
 	},
+	// check UA, return like "IE 8.0" for IE8,"CHROME 29.0.1547.76" for chrome,"SAFARI 537.71" for safari...
 	checkUserAgent : function() {
 		if(!navigator) return false;
 		var bro,str;
@@ -261,7 +268,11 @@ var filter = {
 	}
 }
 
+// turn an Array-like object to an array
 function makeArray(arr) {
+	// is array,return directly
+	if($.check(arr) === 'array') return arr;
+
 	var re = [];
 	try {
 		re = Array.prototype.slice.call(arr)	
@@ -275,12 +286,12 @@ function makeArray(arr) {
 	return re;
 }
 
+// for ie6, find all elements who has the className in the 'node'
 function getElementsByClassName (className,node) {
 	var matchs = [];
 	node = node || document.body;
 	// alert(node)
-	tencent.iterator(node,function(o){
-		// if(o.className && o.className.match(reg))
+	tencent.iterator( node,function (o) {
 		if(isMatchClass(o,className))
 		{
 			matchs.push(o);
@@ -289,19 +300,19 @@ function getElementsByClassName (className,node) {
 	return matchs;
 }
 
-// check wheather the node's classname is equal to the className, return true if they are the same
+// check wheather the node's classname has the className, return true if it have
 function isMatchClass(node,className) {
 	var classReg = new RegExp('\\b' +　className + '\\b');
 	return (node.className && node.className.match(classReg)) ? true : false;
 }
 
-// check wheather the node's tagname is equal to the tagName, return true if they are the same
+// just like isMatchClass
 function isMatchTag(node,tagName) {
 	var tagReg = new RegExp('\\b' +tagName + '\\b','i');
 	return (node.tagName && node.tagName.match(tagReg)) ? true : false;
 }
 
-
+// add forEach function for Array.prototype if it hasn't.
 if(typeof Array.prototype.forEach !== 'function')
 {
 	Array.prototype.forEach = function(fn) {
