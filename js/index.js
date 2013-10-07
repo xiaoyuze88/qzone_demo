@@ -54,17 +54,10 @@ $.onReady(function(){
 			$.parent(target,'.visited-inline') ? $.parent(target,'.visited-inline') : null;
 
 		// 检查mouseover是否从parent的子元素移过来的，如果是，忽略，如果不是，表示鼠标是从容器外进入的
-		if( parent && $.checkMouseoverFrom(parent,e) )
+		if( parent && $.checkMouseoverFrom(parent,e) && $.find(".visited-btns",parent).length === 0)
 		{
 			// 如果里没还没有btns，append之；如果已有，display：none
-			if($.find(".visited-btns",parent).length === 0)
-			{
-				$.find(".visited-option",parent)[0].appendChild(makeBtn());	
-			}
-			else
-			{
-				$.find(".visited-btns",parent)[0].style.display = '';
-			}
+			$.find(".visited-option",parent)[0].appendChild(makeBtn());	
 		}
 	}
 
@@ -77,7 +70,7 @@ $.onReady(function(){
 		// 检查mouseout是否是移动到子元素，如果是，忽略；如果不是，表示鼠标移了parent
 		if(parent && $.checkMouseoutTo(parent,e) && $.find(".visited-btns",parent).length > 0)
 		{
-			$.find(".visited-btns",parent)[0].style.display = 'none';
+			$.remove($.find(".visited-btns",parent)[0]);
 		}
 	}
 
